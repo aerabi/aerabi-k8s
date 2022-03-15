@@ -15,6 +15,15 @@ spec:
       containers:
       - image: okteto.dev/aerabi-api:latest
         name: api
+        readinessProbe:
+          tcpSocket:
+            port: 3000
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 3000
 
 ---
 
