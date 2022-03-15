@@ -1,0 +1,4 @@
+tag: dev
+
+api:
+  image: okteto.dev/aerabi-api
