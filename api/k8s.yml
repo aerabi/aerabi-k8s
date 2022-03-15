@@ -14,6 +14,7 @@ spec:
     spec:
       containers:
       - image: okteto.dev/aerabi-api:latest
+        imagePullPolicy: Always
         name: api
         readinessProbe:
           tcpSocket:
