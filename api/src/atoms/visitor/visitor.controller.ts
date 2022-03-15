@@ -1,4 +1,4 @@
-import { Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { Visitor, VisitorService } from './visitor.service';
 import { Observable } from 'rxjs';
 
@@ -12,7 +12,7 @@ export class VisitorController {
   }
 
   @Post()
-  createVisitor(visitor: Visitor): Observable<Visitor> {
+  createVisitor(@Body() visitor: Visitor): Observable<Visitor> {
     return this.service.createVisitor(visitor);
   }
 }
