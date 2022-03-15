@@ -2,3 +2,6 @@ tag: dev
 
 api:
   image: okteto.dev/aerabi-api
+
+mongodb:
+  password: '3=Gh!h`dCSD@F&kb'

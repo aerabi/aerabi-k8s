@@ -2,16 +2,24 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: api
+  labels:
+      {{- include "aerabi.labels" . | nindent 4 }}
+    app.kubernetes.io/component: api
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: api
+      app.kubernetes.io/name: api
+      app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
       labels:
         app: api
+        app.kubernetes.io/name: api
+        app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
+      terminationGracePeriodSeconds: 0
       containers:
         - image: {{ .Values.api.image }}:{{ .Values.tag }}
           imagePullPolicy: Always

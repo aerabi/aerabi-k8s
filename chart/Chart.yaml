@@ -3,3 +3,4 @@ name: aerabi
 version: 0.1.0
 description: "Aerabi.com Kubernetes Helm chart"
 type: application
+appVersion: 0.1.0
