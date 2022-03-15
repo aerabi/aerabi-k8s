@@ -13,7 +13,7 @@ spec:
         app: api
     spec:
       containers:
-      - image: aerabi/api:latest
+      - image: okteto.dev/aerabi-api:latest
         name: api
 
 ---

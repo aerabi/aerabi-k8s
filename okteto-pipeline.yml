@@ -1,2 +1,5 @@
+deploy:
+  - okteto build -t okteto.dev/aerabi-api:${OKTETO_GIT_COMMIT} api
+  - kubectl apply -f api/k8s.yml
 devs:
   - api/okteto.yml
