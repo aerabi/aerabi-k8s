@@ -1,4 +1,5 @@
 name: api
+image: aerabi/api:latest
 command: bash
 sync:
 - .:/usr/src/app
