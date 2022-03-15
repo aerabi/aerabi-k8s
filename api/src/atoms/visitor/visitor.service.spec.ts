@@ -2,7 +2,7 @@ import { Visitor, VisitorService } from './visitor.service';
 import { Test, TestingModule } from '@nestjs/testing';
 import { firstValueFrom, tap } from 'rxjs';
 
-function fail(reason = "fail was called in a test.") {
+function fail(reason = 'fail was called in a test.') {
   throw new Error(reason);
 }
 
