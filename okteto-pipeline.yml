@@ -1,5 +1,5 @@
 deploy:
-  - okteto build -t okteto.dev/aerabi-api:${OKTETO_GIT_COMMIT} -t okteto.dev/aerabi-api:latest api
-  - kubectl apply -f api/k8s.yml
+  - okteto build -t okteto.dev/aerabi-api:${OKTETO_GIT_COMMIT} api
+  - helm upgrade --install aerabi chart --set tag=${OKTETO_GIT_COMMIT}
 devs:
   - api/okteto.yml
