@@ -17,5 +17,11 @@ import { VisitorRepository } from '../visitor.repository';
       useClass: VisitorMongoRepository,
     },
   ],
+  exports: [
+    {
+      provide: VisitorRepository,
+      useClass: VisitorMongoRepository,
+    },
+  ],
 })
 export class VisitorMongoModule {}
