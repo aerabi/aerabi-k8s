@@ -2,10 +2,8 @@ import { VisitorController } from './visitor.controller';
 import { Test, TestingModule } from '@nestjs/testing';
 import { Visitor, VisitorService } from './visitor.service';
 import { firstValueFrom, mergeMap, tap } from 'rxjs';
-
-function fail(reason = 'fail was called in a test.') {
-  throw new Error(reason);
-}
+import { MockVisitorRepository, VisitorRepository } from './visitor.repository';
+import { fail } from "../../utility/test-util.spec";
 
 describe('VisitorController', () => {
   let controller: VisitorController;
@@ -21,7 +19,10 @@ describe('VisitorController', () => {
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
       controllers: [VisitorController],
-      providers: [VisitorService],
+      providers: [
+        { provide: VisitorRepository, useClass: MockVisitorRepository },
+        VisitorService,
+      ],
     }).compile();
 
     controller = app.get<VisitorController>(VisitorController);
