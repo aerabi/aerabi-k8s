@@ -1,0 +1,35 @@
+image: okteto/okteto:1.13.4
+
+stages:
+  - review
+
+review:
+  stage: review
+  variables:
+    APP: review-$CI_COMMIT_REF_SLUG
+  script:
+    - okteto preview deploy review-$CI_COMMIT_REF_SLUG-$OKTETO_USERNAME --scope personal --branch $CI_COMMIT_REF_NAME --repository $CI_REPOSITORY_URL --wait
+
+  environment:
+    name: review/$CI_COMMIT_REF_SLUG
+    url: https://movies-review-$CI_COMMIT_REF_SLUG-$OKTETO_USERNAME.cloud.okteto.net
+    on_stop: stop-review
+  only:
+    - branches
+  except:
+    - master
+
+stop-review:
+  stage: review
+  when: manual
+  environment:
+    name: review/$CI_COMMIT_REF_SLUG
+    action: stop
+  script:
+    - okteto preview destroy review-$CI_COMMIT_REF_SLUG-$OKTETO_USERNAME
+  variables:
+    GIT_STRATEGY: none
+  only:
+    - branches
+  except:
+    - master
