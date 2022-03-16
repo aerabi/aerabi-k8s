@@ -75,4 +75,10 @@ describe('VisitorRepository', () => {
         .subscribe({ complete: done, error: fail });
     });
   });
+
+  describe('getModel', () => {
+    it('should return the model', () => {
+      expect((repository as VisitorMongoRepository).getModel()).toEqual(model);
+    });
+  });
 });
