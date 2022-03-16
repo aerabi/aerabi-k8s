@@ -1,16 +1,16 @@
-import { Visitor } from './visitor.service';
-import { IVisitorRepository } from './visitor.repository.interface';
+import { Visitor } from '../visitor.service';
+import { VisitorRepository } from '../visitor.repository';
 import { tap } from 'rxjs';
-import { VisitorRepository } from './visitor.repository';
+import { VisitorMongoRepository } from './visitor.mongo.repository';
 
 describe('VisitorRepository', () => {
-  let repository: IVisitorRepository;
+  let repository: VisitorRepository;
   const model: any = {
     create: async (visitor: Visitor) => ({ ...visitor, _id: visitor.id }),
   };
 
   beforeEach(async () => {
-    repository = new VisitorRepository(model);
+    repository = new VisitorMongoRepository(model);
   });
 
   describe('create', () => {

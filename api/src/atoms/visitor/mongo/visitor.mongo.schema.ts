@@ -1,11 +1,11 @@
-import { Visitor } from './visitor.service';
+import { Visitor } from '../visitor.service';
 import { Document } from 'mongoose';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
 export type VisitorDocument = Visitor & Document;
 
 @Schema()
-export class VisitorSchema {
+export class VisitorMongoSchema {
   @Prop()
   name: string;
 
@@ -13,4 +13,5 @@ export class VisitorSchema {
   email: string;
 }
 
-export const visitorSchema = SchemaFactory.createForClass(VisitorSchema);
+export const visitorMongoSchema =
+  SchemaFactory.createForClass(VisitorMongoSchema);
