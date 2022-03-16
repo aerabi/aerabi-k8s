@@ -36,3 +36,8 @@ jobs:
       - run: cd api && npm ci && npm run test:e2e
         env:
           CI: true
+          MONGODB_USERNAME: aerabi
+          MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
+          MONGODB_HOST: aerabi.8vndv.mongodb.net
+          MONGODB_DATABASE: aerabi-api-ci-e2e
+          MONGODB_CLOUD: true
