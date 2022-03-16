@@ -12,7 +12,7 @@ review:
 
   environment:
     name: review/$CI_COMMIT_REF_SLUG
-    url: https://movies-review-$CI_COMMIT_REF_SLUG-$OKTETO_USERNAME.cloud.okteto.net
+    url: https://api-review-$CI_COMMIT_REF_SLUG-$OKTETO_USERNAME.cloud.okteto.net
     on_stop: stop-review
   only:
     - branches
