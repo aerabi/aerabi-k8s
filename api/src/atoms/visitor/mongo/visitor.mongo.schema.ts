@@ -11,6 +11,9 @@ export class VisitorMongoSchema {
 
   @Prop()
   email: string;
+
+  @Prop({ required: false })
+  phone: string;
 }
 
 export const visitorMongoSchema =
