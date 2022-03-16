@@ -3,7 +3,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { Visitor, VisitorService } from './visitor.service';
 import { firstValueFrom, mergeMap, tap } from 'rxjs';
 import { MockVisitorRepository, VisitorRepository } from './visitor.repository';
-import { fail } from "../../utility/test-util.spec";
+import { fail } from '../../utility/test-util.spec';
 
 describe('VisitorController', () => {
   let controller: VisitorController;
