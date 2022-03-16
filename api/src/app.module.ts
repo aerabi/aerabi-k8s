@@ -14,6 +14,7 @@ console.log(`Connecting to MongoDB at ${mongoUrl}`);
 
 @Module({
   imports: [MongooseModule.forRoot(mongoUrl), HealthCheckModule, VisitorModule],
+  exports: [MongooseModule.forRoot(mongoUrl)],
   controllers: [],
   providers: [],
 })

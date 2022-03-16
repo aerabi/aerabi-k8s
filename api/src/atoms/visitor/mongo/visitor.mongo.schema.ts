@@ -4,7 +4,7 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
 export type VisitorDocument = Visitor & Document;
 
-@Schema()
+@Schema({ collection: 'visitors' })
 export class VisitorMongoSchema {
   @Prop()
   name: string;

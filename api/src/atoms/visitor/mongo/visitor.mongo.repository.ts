@@ -44,6 +44,10 @@ export class VisitorMongoRepository implements VisitorRepository {
     );
   }
 
+  public getModel(): Model<VisitorDocument> {
+    return this.visitorModel;
+  }
+
   public static toVisitor(visitor: VisitorDocument): Visitor {
     return {
       id: visitor._id,
