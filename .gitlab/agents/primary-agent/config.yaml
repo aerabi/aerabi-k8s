@@ -1,0 +1,5 @@
+gitops:
+  manifest_projects:
+    - id: 'aerabi/aerabi-k8s'
+      paths:
+        - glob: '**/*.{yaml,yml}'
