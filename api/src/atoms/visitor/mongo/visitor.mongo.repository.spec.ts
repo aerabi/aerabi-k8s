@@ -17,13 +17,13 @@ describe('VisitorRepository', () => {
     exec: async () => visitorDocument,
   };
   const model: any = {
-    create: async (visitor: Visitor) => visitorDocument,
-    findById: (id: string) => visitorDocumentCursor,
+    create: async () => visitorDocument,
+    findById: () => visitorDocumentCursor,
     find: () => ({
       exec: async () => [visitorDocument],
     }),
-    findByIdAndUpdate: (id: string, visitor: Visitor) => visitorDocumentCursor,
-    findByIdAndDelete: (id: string) => visitorDocumentCursor,
+    findByIdAndUpdate: () => visitorDocumentCursor,
+    findByIdAndDelete: () => visitorDocumentCursor,
   };
 
   beforeEach(async () => {
