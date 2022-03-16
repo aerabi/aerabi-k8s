@@ -1,6 +1,6 @@
-import { Inject, Injectable } from "@nestjs/common";
+import { Inject, Injectable } from '@nestjs/common';
 import { Observable, of } from 'rxjs';
-import { VisitorRepository } from "./visitor.repository";
+import { VisitorRepository } from './visitor.repository';
 
 export interface Visitor {
   id?: string;

@@ -1,6 +1,6 @@
-import { Observable, of } from "rxjs";
+import { Observable, of } from 'rxjs';
 import { Visitor } from './visitor.service';
-import { Injectable } from "@nestjs/common";
+import { Injectable } from '@nestjs/common';
 
 export abstract class VisitorRepository {
   abstract create(visitor: Visitor): Observable<Visitor>;

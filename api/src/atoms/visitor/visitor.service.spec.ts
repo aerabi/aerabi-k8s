@@ -1,8 +1,8 @@
-import { Visitor, VisitorService } from "./visitor.service";
-import { Test, TestingModule } from "@nestjs/testing";
-import { firstValueFrom, tap } from "rxjs";
-import { MockVisitorRepository, VisitorRepository } from "./visitor.repository";
-import { fail } from "../../utility/test-util.spec";
+import { Visitor, VisitorService } from './visitor.service';
+import { Test, TestingModule } from '@nestjs/testing';
+import { firstValueFrom, tap } from 'rxjs';
+import { MockVisitorRepository, VisitorRepository } from './visitor.repository';
+import { fail } from '../../utility/test-util.spec';
 
 describe('VisitorService', () => {
   let service: VisitorService;
