@@ -6,3 +6,4 @@ The Aerabi Kubernetes project currently consists of the following components:
 
 ## References
 - [Getting Started on Okteto with Node.js](https://github.com/okteto/node-getting-started)
+- [Preview Environments Using GitLab CI/CD](https://www.okteto.com/docs/cloud/preview-environments/preview-environments-gitlab/)
