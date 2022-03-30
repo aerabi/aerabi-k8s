@@ -1,9 +1,9 @@
-image: okteto/okteto:1.13.4
-
 stages:
   - review
+  - deploy
 
 review:
+  image: okteto/okteto:1.13.4
   stage: review
   variables:
     APP: review-$CI_COMMIT_REF_SLUG
@@ -20,6 +20,7 @@ review:
     - master
 
 stop-review:
+  image: okteto/okteto:1.13.4
   stage: review
   when: manual
   environment:
@@ -33,3 +34,13 @@ stop-review:
     - branches
   except:
     - master
+
+deploy:
+  image:
+    name: bitnami/kubectl:latest
+    entrypoint: [""]
+  stage: deploy
+  script:
+    - kubectl config get-contexts
+    - kubectl config use-context aerabi/aerabi-k8s:primary-agent
+    - kubectl get pods
