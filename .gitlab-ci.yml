@@ -43,4 +43,4 @@ deploy:
   script:
     - kubectl config get-contexts
     - kubectl config use-context aerabi/aerabi-k8s:primary-agent
-    - kubectl get pods
+    - kubectl get pods --namespace=aerabi
