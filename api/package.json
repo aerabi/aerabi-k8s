@@ -23,7 +23,7 @@
     "test:lint": "eslint \"{src,apps,libs,test}/**/*.ts\""
   },
   "dependencies": {
-    "@nestjs/common": "^8.0.0",
+    "@nestjs/common": "^9.0.0",
     "@nestjs/core": "^8.0.0",
     "@nestjs/mongoose": "^9.0.3",
     "@nestjs/platform-express": "^8.0.0",
